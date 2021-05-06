@@ -1,9 +1,15 @@
 {
     "compilerOptions": {
       "module": "commonjs",
+      "baseUrl": ".",
       "noImplicitAny": true,
       "removeComments": true,
       "preserveConstEnums": true,
-      "sourceMap": true
+      "sourceMap": true,
+      "outDir": "dist",
+      "rootDir": ".",
+      "paths": {
+        "*": ["*"]
+      }
     }
 }
