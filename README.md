@@ -11,8 +11,8 @@ Slack taylor swift bot that suggests new songs at an interval.
 
 
 ## TODOs
-- [ ] Project skeleton
-- [ ] cron job for intervals
+- [x] Project skeleton
+- [x] cron job for intervals
 - [ ] get slack token
 - [ ] get spotify token
 - [ ] set up slack message format to send
