@@ -1,8 +1,9 @@
 import { WebClient } from "@slack/web-api";
+import { TAYLOR_ID } from "./constants";
+import { findRandomSong } from "./spotify";
 
 export const CreateNewBot = () => new WebClient(process.env.SLACK_TOKEN);
 
-// TODO find the type for message
-export const postMessage = (client: WebClient, message: any) => {
-  console.log(message);
+export const postSlackMessage = (message: any, client: WebClient) => {
+  console.log("message");
 };
