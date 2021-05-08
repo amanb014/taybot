@@ -21,10 +21,9 @@ export const storeTokens = (token: TokenStore) => {
   });
 };
 
-export const getTokens = async () => {
+export const getTokens: () => Promise<TokenStore> = async () => {
   return new Promise((resolve, reject) => {
     db.findOne({ docType: DocType.TOKENS }, (err, doc) => {
-      console.log(doc);
       if (err) {
         reject(err);
       }
