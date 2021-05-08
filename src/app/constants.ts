@@ -1,1 +1,1 @@
-export const TAYLOR_ID = "06HL4z0CvFAxyc27GXpf02";
+export const TAYLOR_PLAYLISTS = ["4GtQVhGjAwcHFz82UKy3Ca"];

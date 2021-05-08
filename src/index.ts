@@ -1,16 +1,16 @@
 import { CronJob } from "cron";
-import { TAYLOR_ID } from "./app/constants";
-import { findRandomSong, getAccessToken } from "./app/spotify";
+import { getAllSongsForPlaylists } from "./app/spotify";
 import { CreateNewBot, postSlackMessage } from "./app/taybot";
 import * as path from "path";
 import * as dotenv from "dotenv";
+import { TAYLOR_PLAYLISTS } from "./app/constants";
 dotenv.config({
   path: path.join(__dirname, "./../../.env"),
 });
 
 const taybot = CreateNewBot();
 const sendMessage = () => {
-  const song = findRandomSong(TAYLOR_ID);
+  // const song = findRandomSong(TAYLOR_ID);
   postSlackMessage("", taybot);
 };
 
@@ -19,5 +19,6 @@ const job = new CronJob({
   onTick: sendMessage,
 });
 
-// job.start();
-getAccessToken();
+getAllSongsForPlaylists(TAYLOR_PLAYLISTS).then((resp) =>
+  console.log(resp.length)
+);
